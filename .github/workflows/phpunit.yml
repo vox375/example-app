@@ -47,4 +47,4 @@ jobs:
       - name: Set hostname
         run: sudo echo "127.0.0.1 mysql.test" | sudo tee -a /etc/hosts
       - name: Execute tests (Unit and Reature tests) via PHPUnit
-        run: vender/bin/phpunit
+        run: vendor/bin/phpunit

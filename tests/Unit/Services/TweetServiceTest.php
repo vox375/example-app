@@ -3,6 +3,7 @@
 namespace Tests\Unit\Services;
 
 use PHPUnit\Framework\TestCase;
+use App\Modules\ImageUpload\ImageManagerInterface;
 use App\Services\TweetService;
 use Mockery;
 
@@ -14,7 +15,8 @@ class TweetServiceTest extends TestCase
      */
     public function test_check_oun_tweet()
     {
-        $tweetService = new TweetService();
+        $imageManager = Mockery::mock(ImageManagerInterface::class);
+        $tweetService = new TweetService($imageManager);
 
         $mock = Mockery::mock('alias:App\Models\Tweet');
         $mock->shouldReceive('where->first')->andReturn((object)[

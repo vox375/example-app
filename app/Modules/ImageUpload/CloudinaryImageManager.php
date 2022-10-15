@@ -6,7 +6,7 @@ namespace App\Modules\ImageUpload;
 use Cloudinary\Cloudinary;
 use App\Modules\ImageUpload\ImageManagerInterface;
 
-class ClouinaryImageManager implements ImageManagerInterface
+class CloudinaryImageManager implements ImageManagerInterface
 {
     public function __construct(private Cloudinary $cloudinary)
     {            

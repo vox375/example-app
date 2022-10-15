@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use App\Modules\ImageUpload\ImageManagerInterface as ImageUploadImageManagerInterface;
 use App\Modules\ImageUpload\CloudinaryImageManager;
-use App\Modules\ImageUpload\ImageeManagerInterface;
+use App\Modules\ImageUpload\ImageManagerInterface;
 use App\Modules\ImageUpload\LocalImageManager;
 use Cloudinary\Cloudinary;
 use Illuminate\Support\ServiceProvider;
@@ -31,9 +30,9 @@ class AppServiceProvider extends ServiceProvider
 
         // 環境に応じて画像の保存先を設定する
         if ($this->app->environment('production')) {
-            $this->app->bind(ImageeManagerInterface::class, CloudinaryImageManager::class);
+            $this->app->bind(ImageManagerInterface::class, CloudinaryImageManager::class);
         } else {
-            $this->app->bind(ImageUploadImageManagerInterface::class, LocalImageManager::class);
+            $this->app->bind(ImageManagerInterface::class, LocalImageManager::class);
         }
     }
 

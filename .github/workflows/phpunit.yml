@@ -6,7 +6,7 @@ on:
 
 env:
   DB_USERNAME: sail
-  DBPASSWORD: password
+  DB_PASSWORD: password
   MAIL_FROM_ADDRESS: info@example.com
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
       mysql.test:
         image: 'mysql/mysql-server:8.0'
         ports:
-          - 3006:3006
+          - 3606:3606
         env:
           MYSQL_DATABASE: 'example_app'
           MYSQL_USER: ${{ env.DB_USERNAME }}

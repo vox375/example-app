@@ -10,7 +10,7 @@ use App\Models\Tweet;
 
 class DeleteTest extends TestCase
 {
-    use RefreshDatabase;
+    // use RefreshDatabase;
 
     public function test_delete_successed()
     {

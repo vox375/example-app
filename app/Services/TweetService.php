@@ -48,7 +48,7 @@ class TweetService
             $tweet->save();
             foreach ($images as $image) {
                 // Storage::putFile('public/images', $image);
-                $name = $this->imageManagaer->save($image);
+                $name = $this->imageManager->save($image);
                 $imageModel = new Image();
                 // $imageModel->name = $image->hashName();
                 $imageModel->name = $name;
